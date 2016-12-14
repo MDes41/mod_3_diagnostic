@@ -7,7 +7,6 @@ describe 'Nrel Service' do
 				zip = 80203
 				response = NrelService.get_nearest_stations(zip)
 
-
 				expect(response).to have_key(:fuel_stations)
 				expect(response[:fuel_stations].first).to have_key(:distance)
 				expect(response[:fuel_stations].first).to have_key(:station_name)

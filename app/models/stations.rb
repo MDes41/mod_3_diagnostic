@@ -1,20 +1,18 @@
 class Stations
+	attr_reader :distance, :station_name, :street_address, :access_days_time, :fuel_type_code
 
-	def initialize(zip = nil, station = nil)
-		@response ||= get_nearest_stations_response(zip) if zip
+	def initialize(station)
+		@distance = station[:distance]
+		@station_name = station[:station_name]
+		@street_address = station[:street_address]
+		@access_days_time = station[:access_days_time]
+		@fuel_type_code = station[:fuel_type_code]
 	end
 
 	def self.get_nearest_stations(zip)
-		new(zip)
-	end
-
-	def get_nearest_stations_response(zip)
-		NrelService.get_nearest_stations(zip)
-	end
-
-	def fuel_stations
-		@response[:fuel_stations].map do |station| 
-			Stations.new(nil, station)
+		NrelService.get_nearest_stations(zip)[:fuel_stations].map do |station|
+			Stations.new(station)
+		end
 	end
 
 end
