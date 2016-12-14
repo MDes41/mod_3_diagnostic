@@ -68,7 +68,7 @@ describe 'Stations Model' do
 				
 			station = Stations.new(JSON.parse(response, symbolize_names: true))
 
-			expect(station.distance).to eq('0.3117 Miles')
+			expect(station.distance).to eq('0.3117 MUiles')
 			expect(station.station_name).to eq('UDR')
 			expect(station.street_address).to eq("800 Acoma St Denver, CO 80204")
 			expect(station.access_days_time).to eq("24 hours daily")
