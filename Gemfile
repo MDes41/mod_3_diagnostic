@@ -13,6 +13,7 @@ gem 'rspec-rails'
 gem 'figaro'
 gem 'faraday'
 gem 'faker'
+gem 'capybara'
 
 group :development, :test do
   gem 'byebug'
