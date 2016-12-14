@@ -14,6 +14,13 @@ describe 'Closest Stations' do
 				expect(page).to have_content('Fuel Types')
 				expect(page).to have_content('Distance')
 				expect(page).to have_content('Access Times')
+				within('li:first-child') do
+					expect(page).to have_content('UDR')
+					# expect(page).to have_content('800 Acoma St Denver, CO 80204')
+					# expect(page).to have_content('Electric')
+					# expect(page).to have_content('24 hourse daily')
+					# expect(page).to have_content('0.3117 Miles ')
+				end
 			end
 		end
 	end
